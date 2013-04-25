@@ -1,0 +1,13 @@
+# Manipular Objetos en una pagina padre desde un modal u objeto flotante.
+  window.parent.$("#ObjetoPagePadre").dialog('close');
+
+# Abrir modal y recargar pagina padre
+	parent.location.reload();
+	window.parent.$("#ifrmModal").dialog('close');
+
+# Cargando Div con mensaje de espera
+$("#divListado").load('@Url.RouteUrl("Contratos_EjecucionSLAs", new {action = "Listado"})' + '?IdContrato=@Model.Id&Periodo=' + _periodo + '&Mes=' + _mes, 
+    function(){
+      $("#cargando").css("display", "none");
+    }
+);
